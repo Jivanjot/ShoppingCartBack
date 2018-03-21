@@ -32,11 +32,11 @@ public class UserTestCase {
 	@Test
 	public void saveTestCase() {
 		//user = new User();
-		user.setEmail("dwdfg");
-		user.setMobile("grfsdfs");
-		user.setName("j");
-		user.setPassword("hsdfj");
-		user.setRole();
+		user.setEmail("singh.harkirat");
+		user.setMobile("84518");
+		user.setName("Harkirat Singh");
+		user.setPassword("ASDfgh");
+		user.setRole('A');
 		user.setRegisterdate();
 
 		boolean s = userDao.save(user);
@@ -47,11 +47,11 @@ public class UserTestCase {
 	@Test
 	public void updateTestCase() {
 	
-		user.setEmail("dw");
+		user.setEmail("prabh.saharan");
 		user.setName("jivan");
-		user.setMobile("grf");
+		user.setMobile("8115318115");
 		user.setPassword("hjui");
-		user.setRole();
+		user.setRole('C');
 		user.setRegisterdate();
 		boolean a = userDao.update(user);
 

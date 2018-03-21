@@ -32,10 +32,11 @@ public class ProductTestCase {
 	@Test
 	public void saveTestCase() {
 		product = new Product();
-         product.setId("cfg");
-         product.setName("ghjf");
-         product.setDescription("this is sdfu");
-		
+         product.setId("7");
+         product.setName("Computers");
+         product.setDescription("This is a computer category  ");
+		product.setCategoryId("ELEC");
+	//	product.setSupplierId("null");
 		boolean s = productDao.save(product);
 		assertEquals("save test", true, s);
 
@@ -44,9 +45,10 @@ public class ProductTestCase {
 	@Test
 	public void updateTestCase() {
 	
-	     product.setId("cfg");
-         product.setName("gqwhjf");
-         product.setDescription("qwewthis is sdfu");
+	     product.setId("3");
+         product.setName("Samsung");
+         product.setDescription("This is Samsung phone category	");
+         product.setCategoryId("MOB");
 	
 		boolean a = productDao.update(product);
 

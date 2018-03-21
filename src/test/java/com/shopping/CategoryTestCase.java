@@ -32,9 +32,9 @@ public class CategoryTestCase {
 	@Test
 	public void saveTestCase() {
 		category = new Category();
-         category.setId("cfg");
-         category.setName("ghjf");
-         category.setDescription("this is sdfu");
+         category.setId("FUR");
+         category.setName("Furniture");
+         category.setDescription("this is Furniture category");
 		
 		boolean s = categoryDao.save(category);
 		assertEquals("save test", true, s);
@@ -44,9 +44,9 @@ public class CategoryTestCase {
 	@Test
 	public void updateTestCase() {
 	
-	     category.setId("cfg");
-         category.setName("gqwhjf");
-         category.setDescription("qwewthis is sdfu");
+	     category.setId("MEN");
+         category.setName("Men");
+         category.setDescription("This is men category");
 	
 		boolean a = categoryDao.update(category);
 
@@ -71,7 +71,7 @@ public class CategoryTestCase {
 	public void getAllTestCase()
 	{
 	List<Category> l=	categoryDao.getAll();
-		assertEquals(1,l.size());
+		assertEquals(4,l.size());
 	}
 
 	

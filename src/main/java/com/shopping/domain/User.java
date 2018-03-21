@@ -48,8 +48,8 @@ public class User {
 	public char getRole() {
 		return role;
 	}
-	public void setRole() {
-		this.role = 'C';
+	public void setRole(char role) {
+		this.role = role;
 	}
 	public Timestamp getRegisterdate() {
 		return registerdate;
