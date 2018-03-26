@@ -1,0 +1,13 @@
+com\shopping\daoimpl\CategoryDaoImpl.class
+com\shopping\dao\SupplierDao.class
+com\shopping\daoimpl\ProductDaoImpl.class
+com\shopping\hibernateconfig\HibernateConfig.class
+com\shopping\domain\Category.class
+com\shopping\daoimpl\UserDaoImpl.class
+com\shopping\dao\ProductDao.class
+com\shopping\dao\UserDao.class
+com\shopping\daoimpl\SupplierDaoImpl.class
+com\shopping\domain\User.class
+com\shopping\dao\CategoryDao.class
+com\shopping\domain\Product.class
+com\shopping\domain\Supplier.class

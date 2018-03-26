@@ -1,4 +1,13 @@
-F:\project\eclipse ee\ShoppingCartBack\src\main\java\com\shopping\daoimpl\UserDaoImpl.java
-F:\project\eclipse ee\ShoppingCartBack\src\main\java\com\shopping\dao\UserDao.java
-F:\project\eclipse ee\ShoppingCartBack\src\main\java\com\shopping\domain\User.java
-F:\project\eclipse ee\ShoppingCartBack\src\main\java\com\shopping\hibernateconfig\HibernateConfig.java
+F:\project\maven\ShoppingCartBE\src\main\java\com\shopping\dao\CategoryDao.java
+F:\project\maven\ShoppingCartBE\src\main\java\com\shopping\dao\SupplierDao.java
+F:\project\maven\ShoppingCartBE\src\main\java\com\shopping\daoimpl\SupplierDaoImpl.java
+F:\project\maven\ShoppingCartBE\src\main\java\com\shopping\daoimpl\CategoryDaoImpl.java
+F:\project\maven\ShoppingCartBE\src\main\java\com\shopping\domain\Category.java
+F:\project\maven\ShoppingCartBE\src\main\java\com\shopping\domain\Supplier.java
+F:\project\maven\ShoppingCartBE\src\main\java\com\shopping\dao\UserDao.java
+F:\project\maven\ShoppingCartBE\src\main\java\com\shopping\daoimpl\ProductDaoImpl.java
+F:\project\maven\ShoppingCartBE\src\main\java\com\shopping\hibernateconfig\HibernateConfig.java
+F:\project\maven\ShoppingCartBE\src\main\java\com\shopping\daoimpl\UserDaoImpl.java
+F:\project\maven\ShoppingCartBE\src\main\java\com\shopping\domain\User.java
+F:\project\maven\ShoppingCartBE\src\main\java\com\shopping\dao\ProductDao.java
+F:\project\maven\ShoppingCartBE\src\main\java\com\shopping\domain\Product.java

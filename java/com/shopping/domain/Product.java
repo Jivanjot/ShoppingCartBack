@@ -1,3 +1,4 @@
+
 package com.shopping.domain;
 
 import javax.persistence.Entity;
@@ -17,18 +18,11 @@ public class Product {
 	private String id;
 	private String name;
 	private String description;
-	
 	private String categoryId;
 	private String supplierId;
-	private int price;
+	private String price;
 	
 	
-	public int getPrice() {
-		return price;
-	}
-	public void setPrice(int price) {
-		this.price = price;
-	}
 	@ManyToOne
 	@JoinColumn(name="categoryId",insertable=false,updatable=false)
 	private Category category;
@@ -84,7 +78,7 @@ public class Product {
 	}
 
 	
-	
+
 	
 	
 }

@@ -24,7 +24,7 @@ public class CategoryDaoImpl implements CategoryDao {
 	
 	public boolean save(Category category) {
 		try {
-			sessionFactory.getCurrentSession().saveOrUpdate(category);
+			sessionFactory.getCurrentSession().save(category);
 			
 		} catch (HibernateException e) {
 			// TODO Auto-generated catch block
