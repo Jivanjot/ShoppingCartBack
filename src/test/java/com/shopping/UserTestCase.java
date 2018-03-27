@@ -12,11 +12,11 @@ import com.shopping.dao.UserDao;
 import com.shopping.domain.User;
 
 public class UserTestCase {
-	@Autowired
+	@Autowired	
 	private static User user;
 	@Autowired
 	private static UserDao userDao;
-
+ 
 	private static AnnotationConfigApplicationContext context;
 
 	@BeforeClass
@@ -32,11 +32,11 @@ public class UserTestCase {
 	@Test
 	public void saveTestCase() {
 		//user = new User();
-		user.setEmail("singh.harkirat");
-		user.setMobile("84518");
-		user.setName("Harkirat Singh");
-		user.setPassword("ASDfgh");
-		user.setRole('A');
+		user.setEmail("singh.money");
+		user.setMobile("8451548");
+		user.setName("Harkirrfrdat Singh");
+		user.setPassword("ASDfssfgh");
+		user.setRole('C');
 		user.setRegisterdate();
 
 		boolean s = userDao.save(user);
@@ -67,7 +67,7 @@ public class UserTestCase {
 	@Test
 	public void deleteTestCase() {
 
-		boolean a = userDao.delete("dw");
+		boolean a = userDao.delete("SINGH.JIVAN0390@GMAIL.COM");
 		assertEquals(true, a);
 
 	}

@@ -1,6 +1,6 @@
 package com.shopping;
-
-import static org.junit.Assert.*;
+import static org.junit.Assert.assertEquals;
+import static org.junit.Assert.assertNotNull;
 
 import java.util.List;
 
@@ -32,9 +32,9 @@ public class CategoryTestCase {
 	@Test
 	public void saveTestCase() {
 		category = new Category();
-         category.setId("FUR");
-         category.setName("Furniture");
-         category.setDescription("this is Furniture category");
+         category.setId("KID");
+         category.setName("Kids");
+         category.setDescription("this is Kids category");
 		
 		boolean s = categoryDao.save(category);
 		assertEquals("save test", true, s);
