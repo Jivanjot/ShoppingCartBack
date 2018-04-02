@@ -31,7 +31,7 @@ public class HibernateConfig {
 //jdbc:mysql://localhost:3306/shopping
 		dataSource.setDriverClassName("org.h2.Driver");
 //com.mysql.jdbc.Driver		
-		dataSource.setUsername("root");
+		dataSource.setUsername("sa");
 		dataSource.setPassword("");
 		return dataSource;
 		

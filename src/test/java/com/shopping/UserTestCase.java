@@ -32,10 +32,10 @@ public class UserTestCase {
 	@Test
 	public void saveTestCase() {
 		//user = new User();
-		user.setEmail("singh.money");
+		user.setEmail("harkiratiiit@gmail.com");
 		user.setMobile("8451548");
-		user.setName("Harkirrfrdat Singh");
-		user.setPassword("ASDfssfgh");
+		user.setName("Harkirat Singh");
+		user.setPassword("ASDffgh");
 		user.setRole('C');
 		user.setRegisterdate();
 

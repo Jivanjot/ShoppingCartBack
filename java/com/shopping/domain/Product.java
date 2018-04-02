@@ -15,7 +15,7 @@ import org.springframework.stereotype.Component;
 public class Product {
 	
 	@Id
-	private String id;
+	private int id;
 	private String name;
 	private String description;
 	private String categoryId;
@@ -34,10 +34,10 @@ public class Product {
 	
 	
 	
-	public String getId() {
+	public int getId() {
 		return id;
 	}
-	public void setId(String id) {
+	public void setId(int id) {
 		this.id = id;
 	}
 	public String getName() {

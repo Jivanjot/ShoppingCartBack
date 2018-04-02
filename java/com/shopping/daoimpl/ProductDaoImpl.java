@@ -65,7 +65,7 @@ public class ProductDaoImpl implements ProductDao{
 	
 	public List<Product> getAll()
 	{
-return	sessionFactory.getCurrentSession().createQuery("from Product order by Product.id").list();
+return	sessionFactory.getCurrentSession().createQuery("from Product").list();
 		
 		
 	}
