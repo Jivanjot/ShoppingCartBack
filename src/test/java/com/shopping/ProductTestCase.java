@@ -36,7 +36,8 @@ public class ProductTestCase {
          product.setName("Computers");
          product.setDescription("This is a computer category  ");
 		product.setCategoryId("ELEC");
-	//	product.setSupplierId("null");
+	product.setSupplierId("2");
+	product.setPrice(1000);
 		boolean s = productDao.save(product);
 		assertEquals("save test", true, s);
 
@@ -49,7 +50,8 @@ public class ProductTestCase {
          product.setName("Samsung");
          product.setDescription("This is Samsung phone category	");
          product.setCategoryId("MOB");
-	
+	product.setSupplierId("2");
+	product.setPrice(2000);
 		boolean a = productDao.update(product);
 
 		assertEquals(true, a);
@@ -57,14 +59,14 @@ public class ProductTestCase {
 
 	@Test
 	public void selectTestCase() {
-		product = productDao.select("cfg");
+		product = productDao.select("2");
 		assertNotNull(product);
 	}
 
 	@Test
 	public void deleteTestCase() {
 
-		boolean a = productDao.delete("cfg");
+		boolean a = productDao.delete("1");
 		assertEquals(true, a);
 
 	}
@@ -76,6 +78,13 @@ public class ProductTestCase {
 		assertEquals(1,l.size());
 	}
 
+	
+	@Test
+	public void onBasisSupplierIdTestCase()
+	{
+		List<Product> products=	productDao.onBasisSupplierId("2");
+		assertEquals(1, products.size());
+	}
 	
 	
 }

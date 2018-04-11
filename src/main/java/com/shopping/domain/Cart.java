@@ -20,8 +20,52 @@ private String email;
 private String productname;
 private int price;
 private int quantity;
+private String productId;
+private String supplierId;
+private char status;
 @Transient
 private int total;
+
+
+
+
+
+
+
+
+@Override
+public String toString() {
+	return "Cart [id=" + id + ", email=" + email + ", productname=" + productname + ", price=" + price + ", quantity="
+			+ quantity + ", productId=" + productId + ", supplierId=" + supplierId + ", status=" + status + ", total="
+			+ total + "]";
+}
+
+
+
+public String getSupplierId() {
+	return supplierId;
+}
+
+
+
+public void setSupplierId(String supplierId) {
+	this.supplierId = supplierId;
+}
+
+
+
+public char getStatus() {
+	return status;
+}
+public void setStatus() {
+	this.status = 'N';
+}
+public String getProductId() {
+	return productId;
+}
+public void setProductId(String productId) {
+	this.productId = productId;
+}
 public int getId() {
 	return id;
 }

@@ -16,5 +16,6 @@ public boolean save(Product product);
 	
 	public List<Product> getAll();
 	
+	public List<Product> onBasisSupplierId(String SupplierId) ;
 
 }

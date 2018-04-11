@@ -32,7 +32,7 @@ public class SupplierTestCase {
 	@Test
 	public void saveTestCase() {
 		supplier = new Supplier();
-         supplier.setId("cfg");
+         supplier.setId("1");
          supplier.setName("ghjf");
          supplier.setAddress("this is sdfu");
 		
@@ -44,7 +44,7 @@ public class SupplierTestCase {
 	@Test
 	public void updateTestCase() {
 	
-	     supplier.setId("cfg");
+	     supplier.setId("1");
          supplier.setName("gqwhjf");
          supplier.setAddress("qwewthis is sdfu");
 	
@@ -55,14 +55,14 @@ public class SupplierTestCase {
 
 	@Test
 	public void selectTestCase() {
-		supplier = supplierDao.select("cfg");
+		supplier = supplierDao.select("1");
 		assertNotNull(supplier);
 	}
 
 	@Test
 	public void deleteTestCase() {
 
-		boolean a = supplierDao.delete("cfg");
+		boolean a = supplierDao.delete("1");
 		assertEquals(true, a);
 
 	}

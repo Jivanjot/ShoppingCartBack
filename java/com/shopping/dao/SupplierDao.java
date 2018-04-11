@@ -9,11 +9,11 @@ public interface SupplierDao {
 public boolean save(Supplier supplier);
 	
 	
-	public Supplier select(String id);
+	public Supplier select(int id);
 	
 	public boolean update(Supplier supplier);
 	
-	public boolean delete(String id);
+	public boolean delete(int id);
 	
 	public List<Supplier> getAll();
 

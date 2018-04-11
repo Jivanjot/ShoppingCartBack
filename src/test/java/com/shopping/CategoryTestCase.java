@@ -35,6 +35,7 @@ public class CategoryTestCase {
          category.setId("KID");
          category.setName("Kids");
          category.setDescription("this is Kids category");
+         
 		
 		boolean s = categoryDao.save(category);
 		assertEquals("save test", true, s);

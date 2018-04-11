@@ -19,8 +19,17 @@ public class User {
 	private String mobile; 
 	private char role;
 	private Timestamp registerdate;
+	private String address;
 	
 	
+	
+	
+	public String getAddress() {
+		return address;
+	}
+	public void setAddress(String address) {
+		this.address = address;
+	}
 	public String getEmail() {
 		return email;
 	}

@@ -17,6 +17,7 @@ public class Supplier {
 	private String id;
 	private String name;
 	private String address;
+	private String email;
 	
 	@OneToMany(mappedBy="supplier",fetch=FetchType.EAGER)
 	private Set<Product> products;
@@ -24,6 +25,17 @@ public class Supplier {
 	
 	
 	
+	@Override
+	public String toString() {
+		return "Supplier [id=" + id + ", name=" + name + ", address=" + address + ", email=" + email + ", products="
+				+ products + "]";
+	}
+	public String getEmail() {
+		return email;
+	}
+	public void setEmail(String email) {
+		this.email = email;
+	}
 	public Set<Product> getProducts() {
 		return products;
 	}

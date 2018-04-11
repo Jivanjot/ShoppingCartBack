@@ -16,8 +16,12 @@ public boolean save(Cart cart);
 	public boolean delete(int id);
 	
 	public List<Cart> getAll(String email);
+
+	public List<Cart> getAll1(String email,char status);
 	
-	
+	public List<Cart> getAll2(String email,char status,String supplierId);
+
+	public boolean update1(String email);
 	
 
 }

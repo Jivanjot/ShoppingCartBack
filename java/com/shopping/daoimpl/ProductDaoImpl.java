@@ -71,6 +71,7 @@ return	sessionFactory.getCurrentSession().createQuery("from Product").list();
 	}
 
 	
+
 	
 	
 

@@ -38,6 +38,9 @@ public class CartTestCase {
         cart.setPrice(600);
         cart.setProductname("Java 8	");
         cart.setQuantity(1);
+        cart.setProductId("4");
+        cart.setSupplierId("1");
+        cart.setStatus();
 		boolean s = cartDao.save(cart);
 		assertEquals("save test", true, s);
 
@@ -50,6 +53,9 @@ public class CartTestCase {
         cart.setPrice(500);
         cart.setProductname("Java Book");
         cart.setQuantity(1);
+        cart.setProductId("2");
+        cart.setSupplierId("4");
+        cart.setStatus();
 		
 		boolean a = cartDao.update(cart);
 
@@ -77,9 +83,26 @@ public class CartTestCase {
 		assertEquals(2,l.size());
 	}
 
+	@Test
+	public void getAll1TestCase()
+	{
+		List<Cart> carts=  cartDao.getAll1("singh.jivan0390@gmail.com",'N');
+	   assertEquals(1,carts.size());
+	}
 	
+	@Test
+	public void getAll2TestCase()
+	{
+	List<Cart> carts=	cartDao.getAll2("singh.manpreet",'N',"1");
+		assertEquals(1,carts.size());
+		
+	}
 	
-	
-	
+@Test
+public void update1TestCase()
+{
+	boolean a=cartDao.update1("singh.manpreet");
+   assertTrue(a);
+}
 
 }
