@@ -8,10 +8,12 @@ import org.junit.BeforeClass;
 import org.junit.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.AnnotationConfigApplicationContext;
+
 import com.shopping.dao.SupplierDao;
 import com.shopping.domain.Supplier;
 
 public class SupplierTestCase {
+
 	@Autowired
 	private static Supplier supplier;
 	@Autowired
@@ -31,23 +33,28 @@ public class SupplierTestCase {
 
 	@Test
 	public void saveTestCase() {
-		supplier = new Supplier();
-         supplier.setId("1");
-         supplier.setName("ghjf");
-         supplier.setAddress("this is sdfu");
+		//supplier = new Supplier();
+		
+		supplier.setAddress("xdfbdg");
+		supplier.setEmail("rgdzg");
+		supplier.setId("2");
+		supplier.setName("dgsgb");
+		
 		
 		boolean s = supplierDao.save(supplier);
-		assertEquals("save test", true, s);
+		assertEquals(true, s);
 
 	}
 
 	@Test
 	public void updateTestCase() {
 	
-	     supplier.setId("1");
-         supplier.setName("gqwhjf");
-         supplier.setAddress("qwewthis is sdfu");
-	
+
+		supplier.setAddress("xdfbdg");
+		supplier.setEmail("rgdzg");
+		supplier.setId("72");
+		supplier.setName("dgsgb");
+		
 		boolean a = supplierDao.update(supplier);
 
 		assertEquals(true, a);
@@ -55,14 +62,14 @@ public class SupplierTestCase {
 
 	@Test
 	public void selectTestCase() {
-		supplier = supplierDao.select("1");
+		supplier = supplierDao.select("rgdzg");
 		assertNotNull(supplier);
 	}
 
 	@Test
 	public void deleteTestCase() {
 
-		boolean a = supplierDao.delete("1");
+		boolean a = supplierDao.delete("rgdzg");
 		assertEquals(true, a);
 
 	}
@@ -71,9 +78,9 @@ public class SupplierTestCase {
 	public void getAllTestCase()
 	{
 	List<Supplier> l=	supplierDao.getAll();
-		assertEquals(1,l.size());
+		assertEquals(2,l.size());
 	}
 
 	
-	
+
 }

@@ -14,6 +14,8 @@ import com.shopping.domain.Cart;
 
 public class CartTestCase {
 
+
+
 	@Autowired
 	private static Cart cart;
 	@Autowired
@@ -33,30 +35,34 @@ public class CartTestCase {
 
 	@Test
 	public void saveTestCase() {
+		//cart = new Cart();
 		
-        cart.setEmail("harkiratiiit@gmail.com");
-        cart.setPrice(600);
-        cart.setProductname("Java 8	");
-        cart.setQuantity(1);
-        cart.setProductId("4");
-        cart.setSupplierId("1");
-        cart.setStatus();
+		cart.setEmail("dfghdhfgx");
+		cart.setId(5);
+		cart.setPrice(500);
+		cart.setProductId("4");
+		cart.setProductname("ethfg");
+		cart.setQuantity(5);
+		cart.setStatus();
+		cart.setSupplierId("7");
+		
 		boolean s = cartDao.save(cart);
-		assertEquals("save test", true, s);
+		assertEquals(true, s);
 
 	}
 
 	@Test
 	public void updateTestCase() {
 	
-		cart.setEmail("prabh.saharan");
-        cart.setPrice(500);
-        cart.setProductname("Java Book");
-        cart.setQuantity(1);
-        cart.setProductId("2");
-        cart.setSupplierId("4");
-        cart.setStatus();
-		
+
+		cart.setEmail("dfghdhfgx");
+		cart.setId(5);
+		cart.setPrice(466);
+		cart.setProductId("4");
+		cart.setProductname("ethfg");
+		cart.setQuantity(5);
+		cart.setStatus();
+		cart.setSupplierId("7");		
 		boolean a = cartDao.update(cart);
 
 		assertEquals(true, a);
@@ -64,14 +70,14 @@ public class CartTestCase {
 
 	@Test
 	public void selectTestCase() {
-		cart = cartDao.select(1);
+		cart = cartDao.select(5);
 		assertNotNull(cart);
 	}
 
 	@Test
 	public void deleteTestCase() {
 
-		boolean a = cartDao.delete(1);
+		boolean a = cartDao.delete(5);
 		assertEquals(true, a);
 
 	}
@@ -79,30 +85,16 @@ public class CartTestCase {
 	@Test
 	public void getAllTestCase()
 	{
-	List<Cart> l=	cartDao.getAll("prabh.saharan");
+	List<Cart> l=	cartDao.getAll("dfd");
 		assertEquals(2,l.size());
 	}
 
 	@Test
 	public void getAll1TestCase()
 	{
-		List<Cart> carts=  cartDao.getAll1("singh.jivan0390@gmail.com",'N');
-	   assertEquals(1,carts.size());
+	List<Cart> l=	cartDao.getAll1("dfd",'N');
+		assertEquals(2,l.size());
 	}
-	
-	@Test
-	public void getAll2TestCase()
-	{
-	List<Cart> carts=	cartDao.getAll2("singh.manpreet",'N',"1");
-		assertEquals(1,carts.size());
-		
-	}
-	
-@Test
-public void update1TestCase()
-{
-	boolean a=cartDao.update1("singh.manpreet");
-   assertTrue(a);
-}
+
 
 }

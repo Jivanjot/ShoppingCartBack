@@ -19,6 +19,7 @@ public interface UserDao {
 	public List<User> getAll();
 
      public User validate(String email,String password);
-	
+     public boolean update1(String email,String address);
+
 
 }

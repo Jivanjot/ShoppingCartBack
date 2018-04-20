@@ -1,7 +1,5 @@
 package com.shopping.hibernateconfig;
 
-
-
 import java.util.Properties;
 
 import javax.sql.DataSource;
@@ -16,55 +14,49 @@ import org.springframework.orm.hibernate5.HibernateTransactionManager;
 import org.springframework.orm.hibernate5.LocalSessionFactoryBuilder;
 import org.springframework.transaction.annotation.EnableTransactionManagement;
 
-
-
 @Configuration
 @ComponentScan("com.shopping")
 @EnableTransactionManagement
 public class HibernateConfig {
-	@Bean(name="dataSource")
-	public DataSource getDataSource()
-	{
-		
-		DriverManagerDataSource dataSource=new DriverManagerDataSource();
+	@Bean(name = "dataSource")
+	public DataSource getDataSource() {
+
+		DriverManagerDataSource dataSource = new DriverManagerDataSource();
 		dataSource.setUrl("jdbc:h2:tcp://localhost/~/shopping");
-//jdbc:mysql://localhost:3306/shopping
+		// jdbc:h2:tcp://localhost/~/shopping
 		dataSource.setDriverClassName("org.h2.Driver");
-//com.mysql.jdbc.Driver		
+		// org.h2.Driver
 		dataSource.setUsername("sa");
 		dataSource.setPassword("");
 		return dataSource;
-		
+
 	}
-	@Bean(name="properties")
-	public Properties getHibernateProperties()
-	{
-		Properties properties=new Properties();
+
+	@Bean(name = "properties")
+	public Properties getHibernateProperties() {
+		Properties properties = new Properties();
 		properties.put("hibernate.dialect", "org.hibernate.dialect.H2Dialect");
 		properties.put("hibernate.show_sql", "true");
-		
+
 		return properties;
-		
-		
+
 	}
+
 	@Autowired
-	@Bean(name="sessionFactory")
-	public SessionFactory getSessionFactory(DataSource dataSource)
-	{
-		LocalSessionFactoryBuilder sessionBuilder=new LocalSessionFactoryBuilder(dataSource);
+	@Bean(name = "sessionFactory")
+	public SessionFactory getSessionFactory(DataSource dataSource) {
+		LocalSessionFactoryBuilder sessionBuilder = new LocalSessionFactoryBuilder(dataSource);
 		sessionBuilder.addProperties(getHibernateProperties());
 		sessionBuilder.scanPackages("com.shopping");
-			
-	 	return sessionBuilder.buildSessionFactory();
-		
-		}
-	
-	@Bean(name="transactionManager")
+
+		return sessionBuilder.buildSessionFactory();
+
+	}
+
+	@Bean(name = "transactionManager")
 	public HibernateTransactionManager geTransactionManager(SessionFactory sessionFactory) {
-		HibernateTransactionManager transactionManager=new HibernateTransactionManager(sessionFactory);
+		HibernateTransactionManager transactionManager = new HibernateTransactionManager(sessionFactory);
 		return transactionManager;
 	}
-	
-	
-	
+
 }

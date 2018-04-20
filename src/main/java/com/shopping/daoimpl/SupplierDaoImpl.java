@@ -28,7 +28,7 @@ public class SupplierDaoImpl implements SupplierDao {
 		try {
 			log.debug("starting of save method of SupplierDaoImpl");
 
-			sessionFactory.getCurrentSession().save(supplier);
+			sessionFactory.getCurrentSession().saveOrUpdate(supplier);
 		} catch (HibernateException e) {
 			e.printStackTrace();
 			return false;

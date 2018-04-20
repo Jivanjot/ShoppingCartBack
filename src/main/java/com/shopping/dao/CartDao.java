@@ -21,7 +21,7 @@ public boolean save(Cart cart);
 	
 	public List<Cart> getAll2(String email,char status,String supplierId);
 
+	public List<Cart> getAll3(String email,char status,String productId);
 	public boolean update1(String email);
 	
-
 }

@@ -5,7 +5,6 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.Table;
-import javax.persistence.Transient;
 
 import org.springframework.stereotype.Component;
 
@@ -23,9 +22,6 @@ private int quantity;
 private String productId;
 private String supplierId;
 private char status;
-@Transient
-private int total;
-
 
 
 
@@ -36,8 +32,7 @@ private int total;
 @Override
 public String toString() {
 	return "Cart [id=" + id + ", email=" + email + ", productname=" + productname + ", price=" + price + ", quantity="
-			+ quantity + ", productId=" + productId + ", supplierId=" + supplierId + ", status=" + status + ", total="
-			+ total + "]";
+			+ quantity + ", productId=" + productId + ", supplierId=" + supplierId + ", status=" + status + "]";
 }
 
 
@@ -96,13 +91,7 @@ public int getQuantity() {
 public void setQuantity(int quantity) {
 	this.quantity = quantity;
 }
-public int getTotal() {
-	return total;
-}
-public void setTotal(int total) {
-	this.total = total;
-}
-	
+
 
 
 }

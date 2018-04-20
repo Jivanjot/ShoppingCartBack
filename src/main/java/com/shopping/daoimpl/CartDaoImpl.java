@@ -117,6 +117,14 @@ Logger log=LoggerFactory.getLogger(CartDaoImpl.class);
 			
 		}
 
+		public List<Cart> getAll3(String email,char status,String productId)
+		{
+			
+			return	sessionFactory.getCurrentSession().createCriteria(Cart.class).add(Restrictions.eq("email", email)).add(Restrictions.eq("status", status)).add(Restrictions.eq("productId", productId)).list();
+	
+			
+		}
+
 		
 		
 		

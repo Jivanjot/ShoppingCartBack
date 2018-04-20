@@ -8,10 +8,12 @@ import org.junit.BeforeClass;
 import org.junit.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.AnnotationConfigApplicationContext;
+
 import com.shopping.dao.ProductDao;
 import com.shopping.domain.Product;
 
 public class ProductTestCase {
+
 	@Autowired
 	private static Product product;
 	@Autowired
@@ -31,27 +33,32 @@ public class ProductTestCase {
 
 	@Test
 	public void saveTestCase() {
-		product = new Product();
-         product.setId("7");
-         product.setName("Computers");
-         product.setDescription("This is a computer category  ");
-		product.setCategoryId("ELEC");
-	product.setSupplierId("2");
-	product.setPrice(1000);
+		//product = new Product();
+		
+		product.setId("1");
+		product.setName("asdf");
+		product.setPrice(400);
+		product.setSupplierId("5");
+		product.setDescription("xffgfxthxh");
+		product.setCategoryId("6");
+		
+		
 		boolean s = productDao.save(product);
-		assertEquals("save test", true, s);
+		assertEquals(true, s);
 
 	}
 
 	@Test
 	public void updateTestCase() {
 	
-	     product.setId("3");
-         product.setName("Samsung");
-         product.setDescription("This is Samsung phone category	");
-         product.setCategoryId("MOB");
-	product.setSupplierId("2");
-	product.setPrice(2000);
+
+		product.setId("1");
+		product.setName("asdf");
+		product.setPrice(400);
+		product.setSupplierId("6");
+		product.setDescription("xffgfxthxh");
+		product.setCategoryId("6");
+		
 		boolean a = productDao.update(product);
 
 		assertEquals(true, a);
@@ -59,7 +66,7 @@ public class ProductTestCase {
 
 	@Test
 	public void selectTestCase() {
-		product = productDao.select("2");
+		product = productDao.select("1");
 		assertNotNull(product);
 	}
 
@@ -75,16 +82,10 @@ public class ProductTestCase {
 	public void getAllTestCase()
 	{
 	List<Product> l=	productDao.getAll();
-		assertEquals(1,l.size());
+		assertEquals(2,l.size());
 	}
 
 	
-	@Test
-	public void onBasisSupplierIdTestCase()
-	{
-		List<Product> products=	productDao.onBasisSupplierId("2");
-		assertEquals(1, products.size());
-	}
-	
-	
+
+
 }

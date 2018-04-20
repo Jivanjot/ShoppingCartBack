@@ -9,16 +9,14 @@ import org.junit.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.AnnotationConfigApplicationContext;
 
-import com.shopping.dao.CategoryDao;
-import com.shopping.domain.Category;
+import com.shopping.dao.InvoiceDao;
+import com.shopping.domain.Invoice;
 
-public class CategoryTestCase {
-
-
+public class InvoiceTestCase {
 	@Autowired
-	private static Category category;
+	private static Invoice invoice;
 	@Autowired
-	private static CategoryDao categoryDao;
+	private static InvoiceDao invoiceDao;
 
 	private static AnnotationConfigApplicationContext context;
 
@@ -27,20 +25,20 @@ public class CategoryTestCase {
 		context = new AnnotationConfigApplicationContext();
 		context.scan("com.shopping");
 		context.refresh();
-		categoryDao = (CategoryDao) context.getBean("categoryDao");
-		category = (Category) context.getBean("category");
+		invoiceDao = (InvoiceDao) context.getBean("invoiceDao");
+		invoice = (Invoice) context.getBean("invoice");
 
 	}
 
 	@Test
 	public void saveTestCase() {
-		//category = new Category();
-		category.setId("12");
-		category.setName("harkirat singh");
-		category.setDescription("dfdbzg");
+		//invoice = new Invoice();
+		invoice.setInvoiceId(123);
+		invoice.setOrderId(12);
+		invoice.setProducts("2,4,6");
+		invoice.setOrderDate();
 		
-		
-		boolean s = categoryDao.save(category);
+		boolean s = invoiceDao.save(invoice);
 		assertEquals(true, s);
 
 	}
@@ -48,26 +46,26 @@ public class CategoryTestCase {
 	@Test
 	public void updateTestCase() {
 	
-		category.setId("12");
-		category.setName("harkirat singh soi");
-		category.setDescription("dfdbzg");
+		invoice.setInvoiceId(123);
+		invoice.setOrderId(12);
+		invoice.setProducts("2,4,6,8");
+		invoice.setOrderDate();
 		
-				
-		boolean a = categoryDao.update(category);
+		boolean a = invoiceDao.update(invoice);
 
 		assertEquals(true, a);
 	}
 
 	@Test
 	public void selectTestCase() {
-		category = categoryDao.select("12");
-		assertNotNull(category);
+	Invoice invoice=	invoiceDao.select(12);
+		assertNotNull(invoice);
 	}
 
 	@Test
 	public void deleteTestCase() {
 
-		boolean a = categoryDao.delete("12");
+		boolean a = invoiceDao.delete(12);
 		assertEquals(true, a);
 
 	}
@@ -75,9 +73,9 @@ public class CategoryTestCase {
 	@Test
 	public void getAllTestCase()
 	{
-	List<Category> l=	categoryDao.getAll();
+	List<Invoice> l=	invoiceDao.getAll();
 		assertEquals(2,l.size());
 	}
 
-	
+
 }

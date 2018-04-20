@@ -8,15 +8,17 @@ import org.junit.BeforeClass;
 import org.junit.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.AnnotationConfigApplicationContext;
+
 import com.shopping.dao.UserDao;
 import com.shopping.domain.User;
 
 public class UserTestCase {
-	@Autowired	
+
+	@Autowired
 	private static User user;
 	@Autowired
 	private static UserDao userDao;
- 
+
 	private static AnnotationConfigApplicationContext context;
 
 	@BeforeClass
@@ -32,13 +34,15 @@ public class UserTestCase {
 	@Test
 	public void saveTestCase() {
 		//user = new User();
-		user.setEmail("harkiratiiit@gmail.com");
-		user.setMobile("8451548");
-		user.setName("Harkirat Singh");
-		user.setPassword("ASDffgh");
-		user.setRole('C');
+		user.setName("Goga");
+		user.setPassword("GOga1!");
+		user.setEmail("singh.goga@gmail.com");
+		user.setMobile("456367");
+		user.setAddress("Moga");
 		user.setRegisterdate();
-
+		user.setRole('C');
+		
+		
 		boolean s = userDao.save(user);
 		assertEquals(true, s);
 
@@ -47,12 +51,15 @@ public class UserTestCase {
 	@Test
 	public void updateTestCase() {
 	
-		user.setEmail("prabh.saharan");
-		user.setName("jivan");
-		user.setMobile("8115318115");
-		user.setPassword("hjui");
-		user.setRole('C');
+		
+		user.setName("Goga");
+		user.setPassword("GOga1!");
+		user.setEmail("singh.goga@gmail.com");
+		user.setMobile("456367");
+		user.setAddress("Tarewala");
 		user.setRegisterdate();
+		user.setRole('C');
+		
 		boolean a = userDao.update(user);
 
 		assertEquals(true, a);
@@ -60,14 +67,14 @@ public class UserTestCase {
 
 	@Test
 	public void selectTestCase() {
-		user = userDao.select("wqe");
+		user = userDao.select("singh.goga@gmail.com");
 		assertNotNull(user);
 	}
 
 	@Test
 	public void deleteTestCase() {
 
-		boolean a = userDao.delete("SINGH.JIVAN0390@GMAIL.COM");
+		boolean a = userDao.delete("singh.goga@gmail.com");
 		assertEquals(true, a);
 
 	}
@@ -82,10 +89,10 @@ public class UserTestCase {
 	@Test
 	public void validateTestCase()
 	{
-	user=userDao.validate("dw","hj");
+	user=userDao.validate("singh.goga@gmal.com","GOga1!");
 	assertNotNull(user);
 	
 	}
 	
-	
+
 }

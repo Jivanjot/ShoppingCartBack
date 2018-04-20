@@ -89,5 +89,18 @@ public class UserDaoImpl implements UserDao {
 				.add(Restrictions.eq("password", password)).uniqueResult();
 
 	}
+	
+	public boolean update1(String email,String address) {
+		
+		try {
+			sessionFactory.getCurrentSession().createQuery("update User set address='"+address+"' where email='"+email+"'").executeUpdate();
+		  return true;
+		} catch (HibernateException e) {
+			return false;
+
+
+		}
+	}
+
 
 }
